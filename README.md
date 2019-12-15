@@ -6,10 +6,9 @@
 |------|----|-------|
 |name|string|null: false,index: true|
 |address|string|null: false|
-|paddword|string|null: false, foreign_key: true|
+|paddword|string|null: false|
 
 ### Association
-- belongs_to :user
 - has_many :groups
 - belongs_to :groups_users
 - has_many ：chats
@@ -17,18 +16,17 @@
 ### chate テーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false,index: true|
-|group_id|string|null: false,index: true|
+|user_id|integer|null: false,true|
+|group_id|integer|null: false,true|
 |text|integer|index: true|
 |image|integer|index: true|
 
 ### Association
 - belongs_to: user
 - belongs_to :group
-- has_many :text
+- has_many :chate
 
-
-## chate groups_usersテーブル
+## chate groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
