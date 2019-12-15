@@ -4,32 +4,35 @@
 ### users テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|address|string|null: false, foreign_key: true|
+|name|string|null: false,index: true|
+|address|string|null: false|
 |paddword|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :text
-- has_many :messege
+- belongs_to :user
+- has_many :groups
+- belongs_to :groups_users
+- has_many ：chats
 
 ### chate テーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|integer|null: false, foreign_key: true|
-|messege|integer|null: false, foreign_key: true|
-|image|integer|null: false, foreign_key: true|
+|user_id|string|null: false,index: true|
+|group_id|string|null: false,index: true|
+|text|integer|index: true|
+|image|integer|index: true|
 
 ### Association
-- belongs_to :user
-- has_many :text
 - belongs_to: user
-- has_many :messege
+- belongs_to :group
+- has_many :text
+
 
 ## chate groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
