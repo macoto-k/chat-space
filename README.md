@@ -16,7 +16,7 @@
 ### groups テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|nnull: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :groups_users
@@ -34,7 +34,6 @@
 ### Association
 - belongs_to: user
 - belongs_to :group
-- has_many :chate
 
 ## groups_usersテーブル
 |Column|Type|Options|
