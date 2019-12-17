@@ -21,20 +21,15 @@
 ### Association
 - has_many :groups_users
 - has_many :users, through: groups_users
-- has_many :chate
+- has_many :chats
 
-### chate テーブル
+### chats テーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false,trueforeign_key: true|
 |group_id|integer|null: false,foreign_key: true|
 |text|integer|index: true|
 |image|integer|index: true|
-
-### Association
-- belongs_to: user
-- belongs_to :group
-- has_many :chate
 
 ## groups_usersテーブル
 |Column|Type|Options|
