@@ -16,7 +16,7 @@
 ### groups テーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|nnull: false, unique: true|
+|name|string|nnull: false, unique: true|
 
 ### Association
 - has_many :groups_users
@@ -26,10 +26,10 @@
 ### chats テーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false,trueforeign_key: true|
-|group_id|integer|null: false,foreign_key: true|
-|text|integer|index: true|
-|image|integer|index: true|
+|user_id|references|null: false,trueforeign_key: true|
+|group|references|null: false,foreign_key: true|
+|text|integer||
+|image|integer||
 
 ## groups_usersテーブル
 |Column|Type|Options|
