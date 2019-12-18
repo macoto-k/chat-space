@@ -28,8 +28,8 @@
 |------|----|-------|
 |user|references|null: false,trueforeign_key: true|
 |group|references|null: false,foreign_key: true|
-|text|integer||
-|image|integer||
+|text|text||
+|image|string||
 
 ### Association
 - belongs_to: user
