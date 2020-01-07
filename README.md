@@ -1,24 +1,46 @@
 # README
+## chat-space db設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### users テーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false,index: true|
+|address|string|null: false|
+|paddword|string|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :groups,through: groups_users
+- has_many :groups_users
+- has_many ：chats
 
-* Ruby version
+### groups テーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
 
-* System dependencies
+### Association
+- has_many :groups_users
+- has_many :users, through: groups_users
+- has_many :chats
 
-* Configuration
+### chats テーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false,trueforeign_key: true|
+|group|references|null: false,foreign_key: true|
+|text|text||
+|image|string||
 
-* Database creation
+### Association
+- belongs_to: user
+- belongs_to :group
 
-* Database initialization
+## groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :group
+- belongs_to :user
