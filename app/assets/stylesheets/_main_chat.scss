@@ -1,10 +1,10 @@
 .wrapper {
-  //width: 100vw;
-  //height: 100vh;
   display: flex;
 
   .chat-main {
-    //background-color: #ffffff;
+  display: flex;
+
+  .chat-main {
     height: 100vh;
     width: calc(100vw - 300px);
     justify-content: end;
@@ -96,7 +96,6 @@
          width: 100%;
          color: #433a54;
          border: none;
-         //padding: 0 40px 0 10px;
          float: left;
          }
          .form__mask {
@@ -133,8 +132,9 @@
    }
   }
 
+
   .mybtn {
-    position: absolute;
     top: 40px;
     right: 0px;
   }
+}
