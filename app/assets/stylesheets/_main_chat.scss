@@ -116,25 +116,18 @@
            display: none;
            }
          } 
-        &__submit {
-           background-color: #38aef0;
-           border: none;
-           float: right;
-           color: white;
-           justify-content: space-between;
-           width: 100px;
-           height: 50px;
-           font-size: 16px;
-           padding: 0 30px;
-           margin-left: 15px;
-          }
         }
      }
    }
   }
 
   .mybtn {
-    position: absolute;
-    top: 40px;
-    right: 0px;
+    background-color: #38aef0;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    padding: 0 30px;
+    margin-left: 15px;
   }
