@@ -6,23 +6,35 @@
         %ul.left-header__members
           Member：
     .right-header
-      %p Edit
+      = link_to "Edit",edit_group_path(@group)
   .chat-body
-    .message
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-        .lower-meesage
-          .lower-message__content
-            メッセージ
+    = render @messages
+    -# .message
+      -# .upper-message
+      -#   .upper-message__user-name
+      -#     メンバー
+      -#   .upper-message__date
+      -#     2017/04/04
+      -#   .lower-meesage
+      -#     .lower-message__content
+      -#       メッセージ
+  -# .chat-foot
+  -#   %form.from_message
+  -#     .input-box
+  -#       %input{type: "text", class: "input-box__text", placeholder: "type a messge"}
+  -#       .form__mask
+  -#         %label.form__mask__image
+  -#           =icon('fa','image',class: 'icon')
+  -#           %input.hidden{type: 'file'}
+  -#     %input{type: "submit", value: 'Send', class:'mybtn'}
+
   .chat-foot
-    %form.from_message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a messge"}
-        .form__mask
-          %label.form__mask__image
-            =icon('fa','image',class: 'icon')
-            %input.hidden{type: 'file'}
-      %input{type: "submit", value: 'Send', class:'mybtn'}
+    = form_for [@group, @message] do |f|
+      .from_message
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'mybtn'
