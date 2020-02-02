@@ -94,7 +94,7 @@ var reloadMessages = function() {
     }
   })
   .fail(function() {
-    console.log('alert');
+    console.log('error');
   });
 
  };
