@@ -70,7 +70,6 @@ $('#new_message').on('submit', function(e){
 　})
 
 var reloadMessages = function() {
-  console.log('alert');
   last_message_id = $('.message:last').data("message-id");
   $.ajax({
     //ルーティングで設定した通りのURLを指定
