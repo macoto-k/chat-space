@@ -1,5 +1,4 @@
 $(function(){ 
-  last_message_id = $('.message:last').data("message-id");
   
   function buildHTML(message){
   
@@ -67,7 +66,7 @@ $('#new_message').on('submit', function(e){
   })
   .fail(function() {
   });
-　})
+})
 
 var reloadMessages = function() {
   last_message_id = $('.message:last').data("message-id");
@@ -98,5 +97,8 @@ var reloadMessages = function() {
   });
 
  };
+ if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  setInterval(reloadMessages, 7000);
+}
 
 })
