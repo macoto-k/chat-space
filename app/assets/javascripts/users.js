@@ -7,6 +7,7 @@ $(function() {
       </div>
     `;
     $("#user-search-result").append(html);
+    
   }
 
   function addNoUser() {
@@ -40,6 +41,7 @@ $(function() {
       dataType: "json"
     })
       .done(function(users) {
+      
         $("#user-search-result").empty();
 
         if (users.length !== 0) {
@@ -59,7 +61,7 @@ $(function() {
 
 
 $(document).on("click", ".chat-group-user__btn--add", function() {
-  console.log
+  
   const userName = $(this).attr("data-user-name");
   const userId = $(this).attr("data-user-id");
   $(this)
